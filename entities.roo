@@ -1,0 +1,16 @@
+
+# Entities and attributes
+
+entity jpa --class ~.domain.Pet --sequenceName PET_SEQ
+field string --fieldName Myname
+entity jpa --class ~.domain.MyOwner --sequenceName MYOWNER_SEQ
+field string --fieldName firstName
+entity jpa --class ~.domain.Visit --sequenceName VISIT_SEQ
+field other --fieldName visited --type java.util.Date 
+
+
+# References (relations between entities)
+field reference --fieldName Myowner --type MyOwner --class  ~.domain.Pet --cardinality MANY_TO_ONE
+field reference --fieldName visit --type Visit --class  ~.domain.Pet --cardinality MANY_TO_ONE
+
+
