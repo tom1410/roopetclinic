@@ -1,0 +1,20 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-16 10:49:48
+project --topLevelPackage com.pets --projectName com.pets
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+logging setup --level INFO
+// script --file setup.roo
+quit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-16 10:49:51
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-16 10:49:54
+entity jpa --class ~.domain.Pet --sequenceName PET_SEQ
+// [failed] script --file entities.roo
+quit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-16 10:49:56
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-16 10:49:58
+web mvc setup
+web mvc all --package ~.web
+web mvc finder all
+web mvc language --code en
+// script --file webmvc.roo
+quit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-16 10:50:02
