@@ -1,0 +1,27 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-16 17:15:16
+project --topLevelPackage com.pets --projectName com.pets
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+logging setup --level INFO
+// script --file setup.roo
+quit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-16 17:15:18
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-16 17:15:21
+entity jpa --class ~.domain.Pet --sequenceName PET_SEQ
+field string --fieldName name_
+entity jpa --class ~.domain.Owner_ --sequenceName OWNER__SEQ
+field string --fieldName firstName
+entity jpa --class ~.domain.Visit --sequenceName VISIT_SEQ
+field other --fieldName visited --type java.util.Date 
+field reference --fieldName owner_ --type Owner_ --class  ~.domain.Pet --cardinality MANY_TO_ONE
+field reference --fieldName visit --type Visit --class  ~.domain.Pet --cardinality MANY_TO_ONE
+// script --file entities.roo
+quit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-16 17:15:23
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-01-16 17:15:26
+web mvc setup
+web mvc all --package ~.web
+web mvc finder all
+web mvc language --code en
+// script --file webmvc.roo
+quit
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-01-16 17:15:31
