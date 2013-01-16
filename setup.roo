@@ -1,6 +1,0 @@
-project --topLevelPackage com.pets --projectName com.pets
-
-jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
-
-logging setup --level INFO
-
